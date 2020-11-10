@@ -14,7 +14,7 @@ export default class Main extends Component {
     }    
 
     componentDidMount() {
-        fetch(`http://localhost:3003/vendas/clientes`)
+        fetch(`${process.env.REACT_APP_API_URL}/vendas/clientes`)
             .then(cliente =>
                 cliente.json().then(cliente => this.setState({ cliente }))
             )
